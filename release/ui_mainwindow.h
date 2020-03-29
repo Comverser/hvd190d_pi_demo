@@ -306,7 +306,7 @@ public:
         slider_x_vdc->setValue(0);
         slider_x_vdc->setOrientation(Qt::Horizontal);
         slider_x_vdc->setTickPosition(QSlider::TicksBelow);
-        slider_x_vdc->setTickInterval(50);
+        slider_x_vdc->setTickInterval(40);
 
         gridLayout->addWidget(slider_x_vdc, 5, 2, 1, 1);
 
@@ -338,7 +338,7 @@ public:
         slider_x_vac->setValue(0);
         slider_x_vac->setOrientation(Qt::Horizontal);
         slider_x_vac->setTickPosition(QSlider::TicksBelow);
-        slider_x_vac->setTickInterval(50);
+        slider_x_vac->setTickInterval(20);
 
         gridLayout->addWidget(slider_x_vac, 3, 2, 1, 1);
 
@@ -441,7 +441,7 @@ public:
         slider_x_freq->setValue(1);
         slider_x_freq->setOrientation(Qt::Horizontal);
         slider_x_freq->setTickPosition(QSlider::TicksBelow);
-        slider_x_freq->setTickInterval(50);
+        slider_x_freq->setTickInterval(20);
 
         gridLayout->addWidget(slider_x_freq, 1, 2, 1, 1);
 
@@ -656,7 +656,7 @@ public:
         slider_y_vdc->setValue(0);
         slider_y_vdc->setOrientation(Qt::Horizontal);
         slider_y_vdc->setTickPosition(QSlider::TicksBelow);
-        slider_y_vdc->setTickInterval(50);
+        slider_y_vdc->setTickInterval(40);
 
         gridLayout_2->addWidget(slider_y_vdc, 5, 2, 1, 1);
 
@@ -688,7 +688,7 @@ public:
         slider_y_vac->setValue(0);
         slider_y_vac->setOrientation(Qt::Horizontal);
         slider_y_vac->setTickPosition(QSlider::TicksBelow);
-        slider_y_vac->setTickInterval(50);
+        slider_y_vac->setTickInterval(20);
 
         gridLayout_2->addWidget(slider_y_vac, 3, 2, 1, 1);
 
@@ -791,7 +791,7 @@ public:
         slider_y_freq->setValue(1);
         slider_y_freq->setOrientation(Qt::Horizontal);
         slider_y_freq->setTickPosition(QSlider::TicksBelow);
-        slider_y_freq->setTickInterval(50);
+        slider_y_freq->setTickInterval(20);
 
         gridLayout_2->addWidget(slider_y_freq, 1, 2, 1, 1);
 
