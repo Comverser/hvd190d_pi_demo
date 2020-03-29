@@ -48,7 +48,7 @@ void demo_is_y_on(bool flag)
 void demo_wf_set_x(int p_waveform_mode, double p_freq, double p_amp, double p_offset, double p_phase)
 {
     const int m_xy = 0;
-    const int m_fs_max = 25600;
+    const int m_fs_max = 8000;
     const double m_fc = 10000.0;
     const double m_pulse_width = 0;
 
@@ -58,7 +58,7 @@ void demo_wf_set_x(int p_waveform_mode, double p_freq, double p_amp, double p_of
 void demo_wf_set_y(int p_waveform_mode, double p_freq, double p_amp, double p_offset, double p_phase)
 {
     const int m_xy = 1;
-    const int m_fs_max = 25600;
+    const int m_fs_max = 8000;
     const double m_fc = 10000.0;
     const double m_pulse_width = 0;
 
