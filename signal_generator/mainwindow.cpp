@@ -95,7 +95,7 @@ void MainWindow::on_Exit_clicked()
     MainWindow::on_Stop_clicked();
 
     demo_terminate();
-    system("shutdown");
+    system("shutdown now");
     //QApplication::quit();
 }
 
