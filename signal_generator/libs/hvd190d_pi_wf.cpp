@@ -297,9 +297,9 @@ namespace hvd190d_pi
         }
     }
 
-    std::vector<unsigned long> wf::convert_to_cmd_dac_quad_vector(int ch, std::vector<unsigned long> v_digital)
+    std::vector<unsigned int> wf::convert_to_cmd_dac_quad_vector(int ch, std::vector<unsigned int> v_digital)
     {
-        std::vector<unsigned long> buffer;
+        std::vector<unsigned int> buffer;
         buffer.reserve(v_digital.size());
         auto it = buffer.begin();
 

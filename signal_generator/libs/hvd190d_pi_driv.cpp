@@ -1,6 +1,7 @@
 #include "hvd190d_pi_driv.h" // <iostream>
 
-#include <wiringPi.h>
+#include "rpi_reg_access.h"
+//#include <wiringPi.h>
 
 namespace hvd190d_pi
 {
@@ -11,20 +12,30 @@ namespace hvd190d_pi
 
     static void write_bit(int bit)
     { 
-        digitalWrite(sclk, 1);
-        digitalWrite(din, bit);
-        digitalWrite(sclk, 0);
+        gpio_high(sclk);
+        gpio_write(din, bit);
+        gpio_low(sclk);
+//        digitalWrite(sclk, 1);
+//        digitalWrite(din, bit);
+//        digitalWrite(sclk, 0);
     }
 
     static void setup_pi()
     {
-        wiringPiSetupGpio();
-        pinMode(din, OUTPUT);
-        pinMode(sclk, OUTPUT);
-        pinMode(sync, OUTPUT);
-        pinMode(x, OUTPUT);
-        pinMode(y, OUTPUT);
-        pinMode(hv, OUTPUT);
+        gpio_init();
+        gpio_mode_out(din);
+        gpio_mode_out(sclk);
+        gpio_mode_out(sync);
+        gpio_mode_out(x);
+        gpio_mode_out(y);
+        gpio_mode_out(hv);
+//        wiringPiSetupGpio();
+//        pinMode(din, OUTPUT);
+//        pinMode(sclk, OUTPUT);
+//        pinMode(sync, OUTPUT);
+//        pinMode(x, OUTPUT);
+//        pinMode(y, OUTPUT);
+//        pinMode(hv, OUTPUT);
     }
 
     static void setup_dac()
@@ -40,12 +51,14 @@ namespace hvd190d_pi
 
     static void enable_hv()
     {
-        digitalWrite(hv, 1);
+        gpio_high(hv);
+//        digitalWrite(hv, 1);
     }
 
     static void disable_hv()
     {
-        digitalWrite(hv, 0);
+        gpio_low(hv);
+//        digitalWrite(hv, 0);
     }
     
     // public
@@ -62,62 +75,70 @@ namespace hvd190d_pi
         t_start_ = clock();
     }
 
-    void write_spi(unsigned long bits)
-    { 
-        digitalWrite(sync, 0);
+    void write_spi(unsigned int bits)
+    {
+        gpio_low(sync);
+//        digitalWrite(sync, 0);
         for (int i = 0; i < 24; i++) 
         {
             write_bit((bits >> (23 - i)) & 0x01); 
         }
-        digitalWrite(sync, 1);
+        gpio_high(sync);
+//        digitalWrite(sync, 1);
     }
 
-    void write_spi(unsigned long bits_p, unsigned long bits_n)
+    void write_spi(unsigned int bits_p, unsigned int bits_n)
     { 
-        digitalWrite(sync, 0);
+        gpio_low(sync);
+//        digitalWrite(sync, 0);
         for (int i = 0; i < 24; i++) 
         {
             write_bit((bits_p >> (23 - i)) & 0x01); 
         }
-        digitalWrite(sync, 1);
-        digitalWrite(sync, 0);
+        gpio_high(sync);
+        gpio_low(sync);
+//        digitalWrite(sync, 1);
+//        digitalWrite(sync, 0);
         for (int i = 0; i < 24; i++) 
         {
             write_bit((bits_n >> (23 - i)) & 0x01); 
         }
-        digitalWrite(sync, 1);
+        gpio_high(sync);
+//        digitalWrite(sync, 1);
     }
 
-    void write_spi(int ch, unsigned long v_digital)
+    void write_spi(int ch, unsigned int v_digital)
     {
         write_spi(convert_to_spi(ch, v_digital));
     }
 
-    void write_spi(int ch_p, unsigned long v_digital_p, int ch_n, unsigned long v_digital_n)
+    void write_spi(int ch_p, unsigned int v_digital_p, int ch_n, unsigned int v_digital_n)
     {
         write_spi(convert_to_spi(ch_p, v_digital_p));
         write_spi(convert_to_spi(ch_n, v_digital_n));
     }
 
-    void write_spi_all(unsigned long v_digital)
+    void write_spi_all(unsigned int v_digital)
     {
         write_spi(7, v_digital);
     }
 
     void write_trig_x(int signal)
     {
-        digitalWrite(x, signal);
+        gpio_write(x, signal);
+//        digitalWrite(x, signal);
     }
 
     void write_trig_y(int signal)
     {
-        digitalWrite(y, signal);
+        gpio_write(y, signal);
+//        digitalWrite(y, signal);
     }
 
-    unsigned long convert_v_norm_to_v_d(double v_d_norm, int v_res)
+    unsigned int convert_v_norm_to_v_d(double v_d_norm, int v_res)
     {
         v_res = v_res - 1;
-        return (int)( v_res * v_d_norm );
+        return static_cast<unsigned int>( v_res * v_d_norm );
     }
 
     void hold(double v_d_norm)

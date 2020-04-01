@@ -41,8 +41,8 @@ namespace koc
 
         struct data_wf_digital
         {
-            std::vector<unsigned long> wf_t_us;
-            std::vector<unsigned long> wf_v_digital;
+            std::vector<unsigned int> wf_t_us;
+            std::vector<unsigned int> wf_v_digital;
             std::vector<int> wf_trig;
         };
 
@@ -52,9 +52,9 @@ namespace koc
         void gen_wf_v_digital();
         void gen_wf_trig();
         std::vector<double> get_wf_t();
-        std::vector<unsigned long> get_wf_t_us();
+        std::vector<unsigned int> get_wf_t_us();
         std::vector<double> get_wf_v();
-        std::vector<unsigned long> get_wf_v_digital();
+        std::vector<unsigned int> get_wf_v_digital();
         std::vector<int> get_wf_trig();
         void export_wf(analog_digital_mode p_analog_digital_mode);
         double get_freq_max_eight_bits();
@@ -77,9 +77,9 @@ namespace koc
         double freq_max_eight_bits;
         int loop_delay;
         std::vector<double> wf_t;
-        std::vector<unsigned long> wf_t_us;
+        std::vector<unsigned int> wf_t_us;
         std::vector<double> wf_v;
-        std::vector<unsigned long> wf_v_digital;
+        std::vector<unsigned int> wf_v_digital;
         std::vector<int> wf_trig;
 
         enum class even_odd_mode 

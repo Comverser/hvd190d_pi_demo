@@ -29,17 +29,19 @@ SOURCES += main.cpp\
         libs/hvd190d_pi_driv.cpp \
         libs/hvd190d_pi_wf.cpp \
         libs/koc_wf_gen.cpp \
-        libs/demo_wrapper.cpp
+        libs/demo_wrapper.cpp \
+        libs/rpi_reg_access.cpp
 
 HEADERS  += mainwindow.h \
         libs/hvd190d_pi_driv.h \
         libs/hvd190d_pi_wf.h \
         libs/koc_wf_gen.h \
-        libs/demo_wrapper.h
+        libs/demo_wrapper.h \
+        libs/rpi_reg_access.h
 
 FORMS    += mainwindow.ui
 
-LIBS += -L/usr/lib -lwiringPi
+#LIBS += -L/usr/lib -lwiringPi
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

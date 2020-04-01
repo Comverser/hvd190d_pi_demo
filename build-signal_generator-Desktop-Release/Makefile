@@ -35,10 +35,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = signal_generator1.0.0
-DISTDIR = /home/pi/dev/hvd190d_pi_demo/release/.tmp/signal_generator1.0.0
+DISTDIR = /home/pi/dev/hvd190d_pi_demo/build-signal_generator-Desktop-Release/.tmp/signal_generator1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
-LIBS          = $(SUBLIBS) -L/usr/lib -lwiringPi -lQt5Widgets -lQt5Gui -lQt5Core -lGLESv2 -lpthread -latomic 
+LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Core -lGLESv2 -lpthread -latomic 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -55,13 +55,15 @@ SOURCES       = ../signal_generator/main.cpp \
 		../signal_generator/libs/hvd190d_pi_driv.cpp \
 		../signal_generator/libs/hvd190d_pi_wf.cpp \
 		../signal_generator/libs/koc_wf_gen.cpp \
-		../signal_generator/libs/demo_wrapper.cpp moc_mainwindow.cpp
+		../signal_generator/libs/demo_wrapper.cpp \
+		../signal_generator/libs/rpi_reg_access.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		hvd190d_pi_driv.o \
 		hvd190d_pi_wf.o \
 		koc_wf_gen.o \
 		demo_wrapper.o \
+		rpi_reg_access.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/common/unix.conf \
@@ -141,12 +143,14 @@ DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		../signal_generator/libs/hvd190d_pi_driv.h \
 		../signal_generator/libs/hvd190d_pi_wf.h \
 		../signal_generator/libs/koc_wf_gen.h \
-		../signal_generator/libs/demo_wrapper.h ../signal_generator/main.cpp \
+		../signal_generator/libs/demo_wrapper.h \
+		../signal_generator/libs/rpi_reg_access.h ../signal_generator/main.cpp \
 		../signal_generator/mainwindow.cpp \
 		../signal_generator/libs/hvd190d_pi_driv.cpp \
 		../signal_generator/libs/hvd190d_pi_wf.cpp \
 		../signal_generator/libs/koc_wf_gen.cpp \
-		../signal_generator/libs/demo_wrapper.cpp
+		../signal_generator/libs/demo_wrapper.cpp \
+		../signal_generator/libs/rpi_reg_access.cpp
 QMAKE_TARGET  = signal_generator
 DESTDIR       = 
 TARGET        = signal_generator
@@ -330,8 +334,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../signal_generator/mainwindow.h ../signal_generator/libs/hvd190d_pi_driv.h ../signal_generator/libs/hvd190d_pi_wf.h ../signal_generator/libs/koc_wf_gen.h ../signal_generator/libs/demo_wrapper.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../signal_generator/main.cpp ../signal_generator/mainwindow.cpp ../signal_generator/libs/hvd190d_pi_driv.cpp ../signal_generator/libs/hvd190d_pi_wf.cpp ../signal_generator/libs/koc_wf_gen.cpp ../signal_generator/libs/demo_wrapper.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../signal_generator/mainwindow.h ../signal_generator/libs/hvd190d_pi_driv.h ../signal_generator/libs/hvd190d_pi_wf.h ../signal_generator/libs/koc_wf_gen.h ../signal_generator/libs/demo_wrapper.h ../signal_generator/libs/rpi_reg_access.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../signal_generator/main.cpp ../signal_generator/mainwindow.cpp ../signal_generator/libs/hvd190d_pi_driv.cpp ../signal_generator/libs/hvd190d_pi_wf.cpp ../signal_generator/libs/koc_wf_gen.cpp ../signal_generator/libs/demo_wrapper.cpp ../signal_generator/libs/rpi_reg_access.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../signal_generator/mainwindow.ui $(DISTDIR)/
 
 
@@ -369,7 +373,7 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: ../signal_generator/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/dev/hvd190d_pi_demo/release/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/dev/hvd190d_pi_demo/signal_generator -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I. -I/usr/include/c++/8 -I/usr/include/arm-linux-gnueabihf/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/arm-linux-gnueabihf/8/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include ../signal_generator/mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/dev/hvd190d_pi_demo/build-signal_generator-Desktop-Release/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/dev/hvd190d_pi_demo/signal_generator -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I. -I/usr/include/c++/8 -I/usr/include/arm-linux-gnueabihf/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/arm-linux-gnueabihf/8/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include ../signal_generator/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -400,7 +404,8 @@ mainwindow.o: ../signal_generator/mainwindow.cpp ../signal_generator/mainwindow.
 		../signal_generator/libs/demo_wrapper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../signal_generator/mainwindow.cpp
 
-hvd190d_pi_driv.o: ../signal_generator/libs/hvd190d_pi_driv.cpp ../signal_generator/libs/hvd190d_pi_driv.h
+hvd190d_pi_driv.o: ../signal_generator/libs/hvd190d_pi_driv.cpp ../signal_generator/libs/hvd190d_pi_driv.h \
+		../signal_generator/libs/rpi_reg_access.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hvd190d_pi_driv.o ../signal_generator/libs/hvd190d_pi_driv.cpp
 
 hvd190d_pi_wf.o: ../signal_generator/libs/hvd190d_pi_wf.cpp ../signal_generator/libs/hvd190d_pi_wf.h \
@@ -415,6 +420,9 @@ demo_wrapper.o: ../signal_generator/libs/demo_wrapper.cpp ../signal_generator/li
 		../signal_generator/libs/koc_wf_gen.h \
 		../signal_generator/libs/hvd190d_pi_driv.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o demo_wrapper.o ../signal_generator/libs/demo_wrapper.cpp
+
+rpi_reg_access.o: ../signal_generator/libs/rpi_reg_access.cpp ../signal_generator/libs/rpi_reg_access.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rpi_reg_access.o ../signal_generator/libs/rpi_reg_access.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

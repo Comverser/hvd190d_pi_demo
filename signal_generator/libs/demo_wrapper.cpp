@@ -2,27 +2,11 @@
 #include "hvd190d_pi_wf.h" // "koc_wf_gen.h": <vector>
 #include "hvd190d_pi_driv.h" // <iostream>
 
+#define FS_MAX 8192
+
 //////////////////// Private
-//
-struct buffer
-{
-    std::vector<unsigned long> t_us;
-    std::vector<unsigned long> cmd_wf_p;
-    std::vector<unsigned long> cmd_wf_n;
-};
 
 static hvd190d_pi::wf wf_main;
-static buffer wf_buf;
-
-void driv(buffer wf)
-{
-    hvd190d_pi::t_reset(); // take A
-    for (int i = 0; i < wf.t_us.size(); i++ ) // take B, A + B = ~ 1.2 us 
-    {
-        while ( hvd190d_pi::t_lapsed() < wf.t_us[i] ); // take ~1.4 us
-        hvd190d_pi::write_spi(wf.cmd_wf_p[i], wf.cmd_wf_n[i]);
-    }
-}
 
 //////////////////// Public (in order)
 
@@ -48,7 +32,7 @@ void demo_is_y_on(bool flag)
 void demo_wf_set_x(int p_waveform_mode, double p_freq, double p_amp, double p_offset, double p_phase)
 {
     const int m_xy = 0;
-    const int m_fs_max = 8000;
+    const int m_fs_max = FS_MAX;
     const double m_fc = 10000.0;
     const double m_pulse_width = 0;
 
@@ -58,7 +42,7 @@ void demo_wf_set_x(int p_waveform_mode, double p_freq, double p_amp, double p_of
 void demo_wf_set_y(int p_waveform_mode, double p_freq, double p_amp, double p_offset, double p_phase)
 {
     const int m_xy = 1;
-    const int m_fs_max = 8000;
+    const int m_fs_max = FS_MAX;
     const double m_fc = 10000.0;
     const double m_pulse_width = 0;
 
@@ -68,19 +52,29 @@ void demo_wf_set_y(int p_waveform_mode, double p_freq, double p_amp, double p_of
 void demo_wf_gen()
 {
 	wf_main.run_wf_differential();
-
-	wf_buf.t_us = wf_main._sorted_cmd_wf.t_us;
-	wf_buf.cmd_wf_p = wf_main._sorted_cmd_wf.cmd_wf_p;
-	wf_buf.cmd_wf_n = wf_main._sorted_cmd_wf.cmd_wf_n;
 }
 
 void demo_run()
-{
+{ 
+    std::vector<unsigned int> t_us;
+    std::vector<unsigned int> cmd_wf_p;
+    std::vector<unsigned int> cmd_wf_n;
+
+    t_us = wf_main._sorted_cmd_wf.t_us;
+    cmd_wf_p = wf_main._sorted_cmd_wf.cmd_wf_p;
+    cmd_wf_n = wf_main._sorted_cmd_wf.cmd_wf_n;
+
     while(state)
     {
-        driv(wf_buf);
+        hvd190d_pi::t_reset(); // take A
+        for (unsigned int i = 0; i < t_us.size(); i++ ) // take B, A + B = ~ 1.2 us
+        {
+            while ( hvd190d_pi::t_lapsed() < t_us[i] ); // take ~1.4 us
+            hvd190d_pi::write_spi(cmd_wf_p[i], cmd_wf_n[i]);
+        }
     }
 }
+
 
 void demo_hold(double v_d_norm)
 {

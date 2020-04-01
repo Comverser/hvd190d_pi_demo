@@ -20,9 +20,9 @@ namespace hvd190d_pi
 
         struct sorted_cmd_wf
         {
-            std::vector<unsigned long> t_us;
-            std::vector<unsigned long> cmd_wf_p;
-            std::vector<unsigned long> cmd_wf_n;
+            std::vector<unsigned int> t_us;
+            std::vector<unsigned int> cmd_wf_p;
+            std::vector<unsigned int> cmd_wf_n;
             std::vector<int> trig_x;
             std::vector<int> trig_y;
         };
@@ -64,12 +64,12 @@ namespace hvd190d_pi
         void sort_wf_differential_xy(sorted_cmd_wf& ref_sorted_cmd, data_wf_digital_pn& ref_x, data_wf_digital_pn& ref_y);
         void sort_wf_differential(bool p_is_x_on, bool p_is_y_on, sorted_cmd_wf& ref_sorted_cmd, data_wf_digital_pn& ref_x, data_wf_digital_pn& ref_y);
 
-        inline unsigned long convert_to_cmd_dac_quad_datum(int ch, unsigned long v_digital) const
+        inline unsigned int convert_to_cmd_dac_quad_datum(int ch, unsigned int v_digital) const
         {
             return 0x180000 | ( ( (0x000000 | (ch)) << 16) | v_digital); // channel number starts from zero
         }
 
-        std::vector<unsigned long> convert_to_cmd_dac_quad_vector(int ch, std::vector<unsigned long> v_digital);
+        std::vector<unsigned int> convert_to_cmd_dac_quad_vector(int ch, std::vector<unsigned int> v_digital);
 
         koc::wf_gen::waveform_mode translate_waveform_mode(int int_wf_mod);
 

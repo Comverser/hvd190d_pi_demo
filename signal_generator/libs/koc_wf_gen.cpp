@@ -259,14 +259,14 @@ namespace koc
 
     void wf_gen::gen_wf_t_us()
     {
-        unsigned long t_us;
+        unsigned int t_us;
         
         wf_t_us.reserve(wf_t.size());
         auto it_t_us= wf_t_us.begin();
 
         for ( int i = 0; i < wf_t_us.capacity(); i++ )
         {
-            t_us = (unsigned long)( 1000000 * wf_t[i] );
+            t_us = (unsigned int)( 1000000 * wf_t[i] );
             wf_t_us.insert(it_t_us + i, t_us); 
         }
     }
@@ -274,7 +274,7 @@ namespace koc
     void wf_gen::gen_wf_v_digital()
     {
         double v_d_norm;
-        unsigned long v_d;
+        unsigned int v_d;
         int v_res = pow(2, adc_bits) - 1;
 
         wf_v_digital.reserve(wf_v.size());
@@ -321,12 +321,12 @@ namespace koc
         return wf_t;
     }
 
-    std::vector<unsigned long> wf_gen::get_wf_t_us()
+    std::vector<unsigned int> wf_gen::get_wf_t_us()
     {
         return wf_t_us;
     }
 
-    std::vector<unsigned long> wf_gen::get_wf_v_digital()
+    std::vector<unsigned int> wf_gen::get_wf_v_digital()
     {
         return wf_v_digital;
     }

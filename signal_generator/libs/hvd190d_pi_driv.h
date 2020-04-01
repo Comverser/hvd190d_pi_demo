@@ -19,22 +19,22 @@ namespace hvd190d_pi
         return clock() - t_start_;
     }
 
-    inline unsigned long convert_to_spi(int ch, unsigned long v_digital)
+    inline unsigned int convert_to_spi(int ch, unsigned int v_digital)
     {
         return 0x180000 | ( ( (0x000000 | (ch)) << 16) | v_digital); 
     }
 
     void t_reset();
     void t_reset_();
-    void write_spi(unsigned long bits);
-    void write_spi(unsigned long bits_p, unsigned long bits_n);
-    void write_spi(int ch, unsigned long v_digital);
-    void write_spi(int ch_p, unsigned long v_digital_p, int ch_n, unsigned long v_digital_n);
-    void write_spi_all(unsigned long v_digital);
+    void write_spi(unsigned int bits);
+    void write_spi(unsigned int bits_p, unsigned int bits_n);
+    void write_spi(int ch, unsigned int v_digital);
+    void write_spi(int ch_p, unsigned int v_digital_p, int ch_n, unsigned int v_digital_n);
+    void write_spi_all(unsigned int v_digital);
     void write_trig_x(int signal);
     void write_trig_y(int signal);
 
-    unsigned long convert_v_norm_to_v_d(double v_d_norm, int v_res = 65536);
+    unsigned int convert_v_norm_to_v_d(double v_d_norm, int v_res = 65536);
     void hold(double v_d_norm = 0.0);
     void initialize(double v_d_norm = 0.0);
     void terminate(double v_d_norm = 0.0);
