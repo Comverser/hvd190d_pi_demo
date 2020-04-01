@@ -343,8 +343,9 @@ public:
         slider_x_vac->setSizePolicy(sizePolicy3);
         slider_x_vac->setMinimumSize(QSize(0, 50));
         slider_x_vac->setMaximumSize(QSize(600, 50));
+        slider_x_vac->setMinimum(1);
         slider_x_vac->setMaximum(80);
-        slider_x_vac->setValue(0);
+        slider_x_vac->setValue(1);
         slider_x_vac->setOrientation(Qt::Horizontal);
         slider_x_vac->setTickPosition(QSlider::TicksBelow);
         slider_x_vac->setTickInterval(20);
@@ -685,8 +686,9 @@ public:
         slider_y_vac->setSizePolicy(sizePolicy3);
         slider_y_vac->setMinimumSize(QSize(0, 50));
         slider_y_vac->setMaximumSize(QSize(600, 50));
+        slider_y_vac->setMinimum(1);
         slider_y_vac->setMaximum(80);
-        slider_y_vac->setValue(0);
+        slider_y_vac->setValue(1);
         slider_y_vac->setOrientation(Qt::Horizontal);
         slider_y_vac->setTickPosition(QSlider::TicksBelow);
         slider_y_vac->setTickInterval(20);
