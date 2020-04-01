@@ -505,7 +505,7 @@ public:
         slider_x_freq->setSizePolicy(sizePolicy3);
         slider_x_freq->setMinimumSize(QSize(0, 50));
         slider_x_freq->setMaximumSize(QSize(600, 50));
-        slider_x_freq->setMinimum(0);
+        slider_x_freq->setMinimum(1);
         slider_x_freq->setMaximum(100);
         slider_x_freq->setValue(1);
         slider_x_freq->setOrientation(Qt::Horizontal);
@@ -788,7 +788,7 @@ public:
         slider_y_freq->setSizePolicy(sizePolicy3);
         slider_y_freq->setMinimumSize(QSize(0, 50));
         slider_y_freq->setMaximumSize(QSize(600, 50));
-        slider_y_freq->setMinimum(0);
+        slider_y_freq->setMinimum(1);
         slider_y_freq->setMaximum(100);
         slider_y_freq->setValue(1);
         slider_y_freq->setOrientation(Qt::Horizontal);

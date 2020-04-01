@@ -9,7 +9,7 @@ extern std::atomic<bool> state;
 void demo_init(double v_d_norm = 0.0);
 void demo_is_x_on(bool flag);
 void demo_is_y_on(bool flag);
-void demo_wf_set_x(int p_waveform_mode, double p_freq, double p_amp, double p_offset, double p_phase);
+void demo_wf_set_x(int p_waveform_mode, double p_freq, double p_amp, double p_offset, double p_phase); // zero freq generate bug
 void demo_wf_set_y(int p_waveform_mode, double p_freq, double p_amp, double p_offset, double p_phase);
 void demo_wf_gen();
 void demo_run();
