@@ -50,8 +50,8 @@ public:
     QSlider *slider_x_vdc;
     QLabel *label_7;
     QPushButton *btn_x_vdc_up;
-    QSlider *slider_x_vac;
     QPushButton *btn_x_freq_dn;
+    QSlider *slider_x_vac;
     QSpacerItem *verticalSpacer_5;
     QSpacerItem *verticalSpacer_2;
     QLabel *label_4;
@@ -63,12 +63,12 @@ public:
     QLabel *label_6;
     QLabel *label_8;
     QPushButton *btn_x_phase_up;
-    QSlider *slider_x_freq;
     QSpacerItem *horizontalSpacer;
     QTextEdit *textEdit_x_freq;
     QTextEdit *textEdit_x_vac;
     QTextEdit *textEdit_x_vdc;
     QTextEdit *textEdit_x_phase;
+    QSlider *slider_x_freq;
     QWidget *tab_y;
     QWidget *layoutWidget_2;
     QVBoxLayout *verticalLayout_3;
@@ -328,6 +328,15 @@ public:
 
         gridLayout->addWidget(btn_x_vdc_up, 5, 3, 1, 1);
 
+        btn_x_freq_dn = new QPushButton(layoutWidget);
+        btn_x_freq_dn->setObjectName(QStringLiteral("btn_x_freq_dn"));
+        sizePolicy2.setHeightForWidth(btn_x_freq_dn->sizePolicy().hasHeightForWidth());
+        btn_x_freq_dn->setSizePolicy(sizePolicy2);
+        btn_x_freq_dn->setMinimumSize(QSize(0, 50));
+        btn_x_freq_dn->setMaximumSize(QSize(50, 16777215));
+
+        gridLayout->addWidget(btn_x_freq_dn, 1, 1, 1, 1);
+
         slider_x_vac = new QSlider(layoutWidget);
         slider_x_vac->setObjectName(QStringLiteral("slider_x_vac"));
         sizePolicy3.setHeightForWidth(slider_x_vac->sizePolicy().hasHeightForWidth());
@@ -341,15 +350,6 @@ public:
         slider_x_vac->setTickInterval(20);
 
         gridLayout->addWidget(slider_x_vac, 3, 2, 1, 1);
-
-        btn_x_freq_dn = new QPushButton(layoutWidget);
-        btn_x_freq_dn->setObjectName(QStringLiteral("btn_x_freq_dn"));
-        sizePolicy2.setHeightForWidth(btn_x_freq_dn->sizePolicy().hasHeightForWidth());
-        btn_x_freq_dn->setSizePolicy(sizePolicy2);
-        btn_x_freq_dn->setMinimumSize(QSize(0, 50));
-        btn_x_freq_dn->setMaximumSize(QSize(50, 16777215));
-
-        gridLayout->addWidget(btn_x_freq_dn, 1, 1, 1, 1);
 
         verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -372,6 +372,7 @@ public:
         label->setObjectName(QStringLiteral("label"));
         sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy1);
+        label->setMinimumSize(QSize(35, 0));
         label->setMaximumSize(QSize(30, 50));
         label->setFont(font2);
 
@@ -429,21 +430,6 @@ public:
         btn_x_phase_up->setMaximumSize(QSize(50, 16777215));
 
         gridLayout->addWidget(btn_x_phase_up, 7, 3, 1, 1);
-
-        slider_x_freq = new QSlider(layoutWidget);
-        slider_x_freq->setObjectName(QStringLiteral("slider_x_freq"));
-        sizePolicy3.setHeightForWidth(slider_x_freq->sizePolicy().hasHeightForWidth());
-        slider_x_freq->setSizePolicy(sizePolicy3);
-        slider_x_freq->setMinimumSize(QSize(0, 50));
-        slider_x_freq->setMaximumSize(QSize(600, 50));
-        slider_x_freq->setMinimum(0);
-        slider_x_freq->setMaximum(100);
-        slider_x_freq->setValue(1);
-        slider_x_freq->setOrientation(Qt::Horizontal);
-        slider_x_freq->setTickPosition(QSlider::TicksBelow);
-        slider_x_freq->setTickInterval(20);
-
-        gridLayout->addWidget(slider_x_freq, 1, 2, 1, 1);
 
         horizontalSpacer = new QSpacerItem(10, 50, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
@@ -512,6 +498,21 @@ public:
         textEdit_x_phase->setAcceptRichText(false);
 
         gridLayout->addWidget(textEdit_x_phase, 7, 5, 1, 1);
+
+        slider_x_freq = new QSlider(layoutWidget);
+        slider_x_freq->setObjectName(QStringLiteral("slider_x_freq"));
+        sizePolicy3.setHeightForWidth(slider_x_freq->sizePolicy().hasHeightForWidth());
+        slider_x_freq->setSizePolicy(sizePolicy3);
+        slider_x_freq->setMinimumSize(QSize(0, 50));
+        slider_x_freq->setMaximumSize(QSize(600, 50));
+        slider_x_freq->setMinimum(0);
+        slider_x_freq->setMaximum(100);
+        slider_x_freq->setValue(1);
+        slider_x_freq->setOrientation(Qt::Horizontal);
+        slider_x_freq->setTickPosition(QSlider::TicksBelow);
+        slider_x_freq->setTickInterval(20);
+
+        gridLayout->addWidget(slider_x_freq, 1, 2, 1, 1);
 
 
         verticalLayout_2->addLayout(gridLayout);
@@ -722,6 +723,7 @@ public:
         label_14->setObjectName(QStringLiteral("label_14"));
         sizePolicy1.setHeightForWidth(label_14->sizePolicy().hasHeightForWidth());
         label_14->setSizePolicy(sizePolicy1);
+        label_14->setMinimumSize(QSize(35, 0));
         label_14->setMaximumSize(QSize(30, 50));
         label_14->setFont(font2);
 
@@ -879,12 +881,12 @@ public:
         state->setObjectName(QStringLiteral("state"));
         state->setMaximumSize(QSize(16777215, 60));
         QFont font3;
-        font3.setPointSize(40);
+        font3.setPointSize(30);
         font3.setBold(true);
         font3.setItalic(true);
         font3.setWeight(75);
         state->setFont(font3);
-        state->setAlignment(Qt::AlignCenter);
+        state->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
 
         verticalLayout->addWidget(state);
 
@@ -923,7 +925,7 @@ public:
 
         layoutWidget2 = new QWidget(centralWidget);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(460, 20, 198, 42));
+        layoutWidget2->setGeometry(QRect(397, 20, 261, 42));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -967,7 +969,7 @@ public:
         btn_x_wf_sin->setText(QApplication::translate("MainWindow", "Sine", nullptr));
         btn_x_wf_saw->setText(QApplication::translate("MainWindow", "Sawtooth", nullptr));
         btn_x_wf_trg->setText(QApplication::translate("MainWindow", "Triangle", nullptr));
-        btn_x_wf_sq->setText(QApplication::translate("MainWindow", "Squre", nullptr));
+        btn_x_wf_sq->setText(QApplication::translate("MainWindow", "Square", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "V", nullptr));
         btn_x_vdc_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
         btn_x_phase_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
@@ -978,7 +980,7 @@ public:
         btn_x_vdc_up->setText(QApplication::translate("MainWindow", ">", nullptr));
         btn_x_freq_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Hz", nullptr));
-        label->setText(QApplication::translate("MainWindow", "deg.", nullptr));
+        label->setText(QApplication::translate("MainWindow", "deg", nullptr));
         btn_x_vac_up->setText(QApplication::translate("MainWindow", ">", nullptr));
         btn_x_vac_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "Amplitude", nullptr));
@@ -988,7 +990,7 @@ public:
         btn_y_wf_sin->setText(QApplication::translate("MainWindow", "Sine", nullptr));
         btn_y_wf_saw->setText(QApplication::translate("MainWindow", "Sawtooth", nullptr));
         btn_y_wf_trg->setText(QApplication::translate("MainWindow", "Triangle", nullptr));
-        btn_y_wf_sq->setText(QApplication::translate("MainWindow", "Squre", nullptr));
+        btn_y_wf_sq->setText(QApplication::translate("MainWindow", "Square", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "V", nullptr));
         btn_y_vdc_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
         btn_y_phase_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
@@ -999,7 +1001,7 @@ public:
         btn_y_vdc_up->setText(QApplication::translate("MainWindow", ">", nullptr));
         btn_y_freq_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
         label_13->setText(QApplication::translate("MainWindow", "Hz", nullptr));
-        label_14->setText(QApplication::translate("MainWindow", "deg.", nullptr));
+        label_14->setText(QApplication::translate("MainWindow", "deg", nullptr));
         btn_y_vac_up->setText(QApplication::translate("MainWindow", ">", nullptr));
         btn_y_vac_dn->setText(QApplication::translate("MainWindow", "<", nullptr));
         label_15->setText(QApplication::translate("MainWindow", "Amplitude", nullptr));
