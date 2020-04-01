@@ -342,7 +342,7 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 void MainWindow::on_btn_x_wf_sin_clicked()
 {
     MainWindow::on_Stop_clicked();
-    //ui->btn_x_wf_sin->setChecked(false);
+    ui->btn_x_wf_sin->setChecked(true);
     ui->btn_x_wf_saw->setChecked(false);
     ui->btn_x_wf_trg->setChecked(false);
     ui->btn_x_wf_sq->setChecked(false);
@@ -354,7 +354,7 @@ void MainWindow::on_btn_x_wf_saw_clicked()
 {
     MainWindow::on_Stop_clicked();
     ui->btn_x_wf_sin->setChecked(false);
-    //ui->btn_x_wf_saw->setChecked(false);
+    ui->btn_x_wf_saw->setChecked(true);
     ui->btn_x_wf_trg->setChecked(false);
     ui->btn_x_wf_sq->setChecked(false);
     waveform_x = 2;
@@ -366,7 +366,7 @@ void MainWindow::on_btn_x_wf_trg_clicked()
     MainWindow::on_Stop_clicked();
     ui->btn_x_wf_sin->setChecked(false);
     ui->btn_x_wf_saw->setChecked(false);
-    //ui->btn_x_wf_trg->setChecked(false);
+    ui->btn_x_wf_trg->setChecked(true);
     ui->btn_x_wf_sq->setChecked(false);
     waveform_x = 1;
     demo_wf_set_x(waveform_x, freq_x, volt_x, volt_off_x, phase_x);
@@ -378,7 +378,7 @@ void MainWindow::on_btn_x_wf_sq_clicked()
     ui->btn_x_wf_sin->setChecked(false);
     ui->btn_x_wf_saw->setChecked(false);
     ui->btn_x_wf_trg->setChecked(false);
-    //ui->btn_x_wf_sq->setChecked(false);
+    ui->btn_x_wf_sq->setChecked(true);
     waveform_x = 3;
     demo_wf_set_x(waveform_x, freq_x, volt_x, volt_off_x, phase_x);
 }
@@ -386,7 +386,7 @@ void MainWindow::on_btn_x_wf_sq_clicked()
 void MainWindow::on_btn_y_wf_sin_clicked()
 {
     MainWindow::on_Stop_clicked();
-    //ui->btn_y_wf_sin->setChecked(false);
+    ui->btn_y_wf_sin->setChecked(true);
     ui->btn_y_wf_saw->setChecked(false);
     ui->btn_y_wf_trg->setChecked(false);
     ui->btn_y_wf_sq->setChecked(false);
@@ -398,7 +398,7 @@ void MainWindow::on_btn_y_wf_saw_clicked()
 {
     MainWindow::on_Stop_clicked();
     ui->btn_y_wf_sin->setChecked(false);
-    //ui->btn_y_wf_saw->setChecked(false);
+    ui->btn_y_wf_saw->setChecked(true);
     ui->btn_y_wf_trg->setChecked(false);
     ui->btn_y_wf_sq->setChecked(false);
     waveform_y = 2;
@@ -410,7 +410,7 @@ void MainWindow::on_btn_y_wf_trg_clicked()
     MainWindow::on_Stop_clicked();
     ui->btn_y_wf_sin->setChecked(false);
     ui->btn_y_wf_saw->setChecked(false);
-    //ui->btn_y_wf_trg->setChecked(false);
+    ui->btn_y_wf_trg->setChecked(true);
     ui->btn_y_wf_sq->setChecked(false);
     waveform_y = 1;
     demo_wf_set_y(waveform_y, freq_y, volt_y, volt_off_y, phase_y);
@@ -422,7 +422,7 @@ void MainWindow::on_btn_y_wf_sq_clicked()
     ui->btn_y_wf_sin->setChecked(false);
     ui->btn_y_wf_saw->setChecked(false);
     ui->btn_y_wf_trg->setChecked(false);
-    //ui->btn_y_wf_sq->setChecked(false);
+    ui->btn_y_wf_sq->setChecked(true);
     waveform_y = 3;
     demo_wf_set_y(waveform_y, freq_y, volt_y, volt_off_y, phase_y);
 }
