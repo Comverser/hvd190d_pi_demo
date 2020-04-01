@@ -1039,13 +1039,13 @@ public:
         enable_x->setObjectName(QStringLiteral("enable_x"));
         enable_x->setMinimumSize(QSize(0, 30));
         QFont font6;
-        font6.setPointSize(14);
+        font6.setPointSize(12);
         font6.setBold(true);
         font6.setWeight(75);
         enable_x->setFont(font6);
         enable_x->setStyleSheet(QLatin1String("QCheckBox::indicator {\n"
-"     width: 35px;\n"
-"     height: 35px;\n"
+"     width: 30px;\n"
+"     height: 30px;\n"
 "}"));
         enable_x->setChecked(true);
         enable_x->setTristate(false);
@@ -1057,8 +1057,8 @@ public:
         enable_y->setMinimumSize(QSize(0, 30));
         enable_y->setFont(font6);
         enable_y->setStyleSheet(QLatin1String("QCheckBox::indicator {\n"
-"     width: 35px;\n"
-"     height: 35px;\n"
+"     width: 30px;\n"
+"     height: 30px;\n"
 "}"));
         enable_y->setChecked(true);
         enable_y->setTristate(false);
