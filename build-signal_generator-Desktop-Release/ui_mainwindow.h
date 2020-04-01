@@ -166,7 +166,7 @@ public:
         btn_x_wf_sin->setSizePolicy(sizePolicy);
         btn_x_wf_sin->setMinimumSize(QSize(0, 50));
         QFont font1;
-        font1.setPointSize(18);
+        font1.setPointSize(16);
         font1.setBold(true);
         font1.setWeight(75);
         btn_x_wf_sin->setFont(font1);
@@ -181,9 +181,7 @@ public:
         sizePolicy.setHeightForWidth(btn_x_wf_saw->sizePolicy().hasHeightForWidth());
         btn_x_wf_saw->setSizePolicy(sizePolicy);
         btn_x_wf_saw->setMinimumSize(QSize(0, 50));
-        QFont font2;
-        font2.setPointSize(18);
-        btn_x_wf_saw->setFont(font2);
+        btn_x_wf_saw->setFont(font1);
         btn_x_wf_saw->setCheckable(true);
         btn_x_wf_saw->setAutoExclusive(false);
 
@@ -194,7 +192,7 @@ public:
         sizePolicy.setHeightForWidth(btn_x_wf_trg->sizePolicy().hasHeightForWidth());
         btn_x_wf_trg->setSizePolicy(sizePolicy);
         btn_x_wf_trg->setMinimumSize(QSize(0, 50));
-        btn_x_wf_trg->setFont(font2);
+        btn_x_wf_trg->setFont(font1);
         btn_x_wf_trg->setCheckable(true);
         btn_x_wf_trg->setAutoExclusive(false);
 
@@ -205,7 +203,7 @@ public:
         sizePolicy.setHeightForWidth(btn_x_wf_sq->sizePolicy().hasHeightForWidth());
         btn_x_wf_sq->setSizePolicy(sizePolicy);
         btn_x_wf_sq->setMinimumSize(QSize(0, 50));
-        btn_x_wf_sq->setFont(font2);
+        btn_x_wf_sq->setFont(font1);
         btn_x_wf_sq->setCheckable(true);
         btn_x_wf_sq->setAutoExclusive(false);
 
@@ -225,9 +223,9 @@ public:
         sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy1);
         label_2->setMaximumSize(QSize(30, 50));
-        QFont font3;
-        font3.setPointSize(12);
-        label_2->setFont(font3);
+        QFont font2;
+        font2.setPointSize(12);
+        label_2->setFont(font2);
 
         gridLayout->addWidget(label_2, 5, 6, 1, 1);
 
@@ -298,7 +296,7 @@ public:
         sizePolicy4.setVerticalStretch(0);
         sizePolicy4.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
         label_5->setSizePolicy(sizePolicy4);
-        label_5->setFont(font3);
+        label_5->setFont(font2);
         label_5->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_5, 1, 0, 1, 1);
@@ -308,7 +306,7 @@ public:
         sizePolicy1.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
         label_3->setSizePolicy(sizePolicy1);
         label_3->setMaximumSize(QSize(30, 50));
-        label_3->setFont(font3);
+        label_3->setFont(font2);
 
         gridLayout->addWidget(label_3, 3, 6, 1, 1);
 
@@ -342,7 +340,7 @@ public:
         label_7->setObjectName(QStringLiteral("label_7"));
         sizePolicy4.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
         label_7->setSizePolicy(sizePolicy4);
-        label_7->setFont(font3);
+        label_7->setFont(font2);
         label_7->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_7, 5, 0, 1, 1);
@@ -405,7 +403,7 @@ public:
         sizePolicy1.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
         label_4->setSizePolicy(sizePolicy1);
         label_4->setMaximumSize(QSize(30, 50));
-        label_4->setFont(font3);
+        label_4->setFont(font2);
 
         gridLayout->addWidget(label_4, 1, 6, 1, 1);
 
@@ -415,7 +413,7 @@ public:
         label->setSizePolicy(sizePolicy1);
         label->setMinimumSize(QSize(35, 0));
         label->setMaximumSize(QSize(30, 50));
-        label->setFont(font3);
+        label->setFont(font2);
 
         gridLayout->addWidget(label, 7, 6, 1, 1);
 
@@ -449,7 +447,7 @@ public:
         label_6->setObjectName(QStringLiteral("label_6"));
         sizePolicy4.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy4);
-        label_6->setFont(font3);
+        label_6->setFont(font2);
         label_6->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_6, 3, 0, 1, 1);
@@ -458,7 +456,7 @@ public:
         label_8->setObjectName(QStringLiteral("label_8"));
         sizePolicy4.setHeightForWidth(label_8->sizePolicy().hasHeightForWidth());
         label_8->setSizePolicy(sizePolicy4);
-        label_8->setFont(font3);
+        label_8->setFont(font2);
         label_8->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_8, 7, 0, 1, 1);
@@ -481,9 +479,9 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_x_freq->sizePolicy().hasHeightForWidth());
         textEdit_x_freq->setSizePolicy(sizePolicy1);
         textEdit_x_freq->setMaximumSize(QSize(55, 40));
-        QFont font4;
-        font4.setPointSize(16);
-        textEdit_x_freq->setFont(font4);
+        QFont font3;
+        font3.setPointSize(16);
+        textEdit_x_freq->setFont(font3);
         textEdit_x_freq->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_x_freq->setLayoutDirection(Qt::LeftToRight);
         textEdit_x_freq->setAutoFillBackground(false);
@@ -499,7 +497,7 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_x_vac->sizePolicy().hasHeightForWidth());
         textEdit_x_vac->setSizePolicy(sizePolicy1);
         textEdit_x_vac->setMaximumSize(QSize(55, 40));
-        textEdit_x_vac->setFont(font4);
+        textEdit_x_vac->setFont(font3);
         textEdit_x_vac->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_x_vac->setLayoutDirection(Qt::LeftToRight);
         textEdit_x_vac->setAutoFillBackground(false);
@@ -515,7 +513,7 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_x_vdc->sizePolicy().hasHeightForWidth());
         textEdit_x_vdc->setSizePolicy(sizePolicy1);
         textEdit_x_vdc->setMaximumSize(QSize(55, 40));
-        textEdit_x_vdc->setFont(font4);
+        textEdit_x_vdc->setFont(font3);
         textEdit_x_vdc->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_x_vdc->setLayoutDirection(Qt::LeftToRight);
         textEdit_x_vdc->setAutoFillBackground(false);
@@ -531,7 +529,7 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_x_phase->sizePolicy().hasHeightForWidth());
         textEdit_x_phase->setSizePolicy(sizePolicy1);
         textEdit_x_phase->setMaximumSize(QSize(55, 40));
-        textEdit_x_phase->setFont(font4);
+        textEdit_x_phase->setFont(font3);
         textEdit_x_phase->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_x_phase->setLayoutDirection(Qt::LeftToRight);
         textEdit_x_phase->setAutoFillBackground(false);
@@ -591,7 +589,7 @@ public:
         sizePolicy.setHeightForWidth(btn_y_wf_sin->sizePolicy().hasHeightForWidth());
         btn_y_wf_sin->setSizePolicy(sizePolicy);
         btn_y_wf_sin->setMinimumSize(QSize(0, 50));
-        btn_y_wf_sin->setFont(font2);
+        btn_y_wf_sin->setFont(font3);
         btn_y_wf_sin->setCheckable(true);
         btn_y_wf_sin->setChecked(true);
 
@@ -602,7 +600,7 @@ public:
         sizePolicy.setHeightForWidth(btn_y_wf_saw->sizePolicy().hasHeightForWidth());
         btn_y_wf_saw->setSizePolicy(sizePolicy);
         btn_y_wf_saw->setMinimumSize(QSize(0, 50));
-        btn_y_wf_saw->setFont(font2);
+        btn_y_wf_saw->setFont(font3);
         btn_y_wf_saw->setCheckable(true);
 
         horizontalLayout_3->addWidget(btn_y_wf_saw);
@@ -612,7 +610,7 @@ public:
         sizePolicy.setHeightForWidth(btn_y_wf_trg->sizePolicy().hasHeightForWidth());
         btn_y_wf_trg->setSizePolicy(sizePolicy);
         btn_y_wf_trg->setMinimumSize(QSize(0, 50));
-        btn_y_wf_trg->setFont(font2);
+        btn_y_wf_trg->setFont(font3);
         btn_y_wf_trg->setCheckable(true);
 
         horizontalLayout_3->addWidget(btn_y_wf_trg);
@@ -638,7 +636,7 @@ public:
         sizePolicy1.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
         label_9->setSizePolicy(sizePolicy1);
         label_9->setMaximumSize(QSize(30, 50));
-        label_9->setFont(font3);
+        label_9->setFont(font2);
 
         gridLayout_2->addWidget(label_9, 5, 6, 1, 1);
 
@@ -700,7 +698,7 @@ public:
         label_10->setObjectName(QStringLiteral("label_10"));
         sizePolicy4.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
         label_10->setSizePolicy(sizePolicy4);
-        label_10->setFont(font3);
+        label_10->setFont(font2);
         label_10->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label_10, 1, 0, 1, 1);
@@ -710,7 +708,7 @@ public:
         sizePolicy1.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
         label_11->setSizePolicy(sizePolicy1);
         label_11->setMaximumSize(QSize(30, 50));
-        label_11->setFont(font3);
+        label_11->setFont(font2);
 
         gridLayout_2->addWidget(label_11, 3, 6, 1, 1);
 
@@ -744,7 +742,7 @@ public:
         label_12->setObjectName(QStringLiteral("label_12"));
         sizePolicy4.setHeightForWidth(label_12->sizePolicy().hasHeightForWidth());
         label_12->setSizePolicy(sizePolicy4);
-        label_12->setFont(font3);
+        label_12->setFont(font2);
         label_12->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label_12, 5, 0, 1, 1);
@@ -807,7 +805,7 @@ public:
         sizePolicy1.setHeightForWidth(label_13->sizePolicy().hasHeightForWidth());
         label_13->setSizePolicy(sizePolicy1);
         label_13->setMaximumSize(QSize(30, 50));
-        label_13->setFont(font3);
+        label_13->setFont(font2);
 
         gridLayout_2->addWidget(label_13, 1, 6, 1, 1);
 
@@ -817,7 +815,7 @@ public:
         label_14->setSizePolicy(sizePolicy1);
         label_14->setMinimumSize(QSize(35, 0));
         label_14->setMaximumSize(QSize(30, 50));
-        label_14->setFont(font3);
+        label_14->setFont(font2);
 
         gridLayout_2->addWidget(label_14, 7, 6, 1, 1);
 
@@ -851,7 +849,7 @@ public:
         label_15->setObjectName(QStringLiteral("label_15"));
         sizePolicy4.setHeightForWidth(label_15->sizePolicy().hasHeightForWidth());
         label_15->setSizePolicy(sizePolicy4);
-        label_15->setFont(font3);
+        label_15->setFont(font2);
         label_15->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label_15, 3, 0, 1, 1);
@@ -860,7 +858,7 @@ public:
         label_16->setObjectName(QStringLiteral("label_16"));
         sizePolicy4.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
         label_16->setSizePolicy(sizePolicy4);
-        label_16->setFont(font3);
+        label_16->setFont(font2);
         label_16->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label_16, 7, 0, 1, 1);
@@ -910,7 +908,7 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_y_freq->sizePolicy().hasHeightForWidth());
         textEdit_y_freq->setSizePolicy(sizePolicy1);
         textEdit_y_freq->setMaximumSize(QSize(55, 40));
-        textEdit_y_freq->setFont(font4);
+        textEdit_y_freq->setFont(font3);
         textEdit_y_freq->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_y_freq->setLayoutDirection(Qt::LeftToRight);
         textEdit_y_freq->setAutoFillBackground(false);
@@ -926,7 +924,7 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_y_vac->sizePolicy().hasHeightForWidth());
         textEdit_y_vac->setSizePolicy(sizePolicy1);
         textEdit_y_vac->setMaximumSize(QSize(55, 40));
-        textEdit_y_vac->setFont(font4);
+        textEdit_y_vac->setFont(font3);
         textEdit_y_vac->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_y_vac->setLayoutDirection(Qt::LeftToRight);
         textEdit_y_vac->setAutoFillBackground(false);
@@ -942,7 +940,7 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_y_vdc->sizePolicy().hasHeightForWidth());
         textEdit_y_vdc->setSizePolicy(sizePolicy1);
         textEdit_y_vdc->setMaximumSize(QSize(55, 40));
-        textEdit_y_vdc->setFont(font4);
+        textEdit_y_vdc->setFont(font3);
         textEdit_y_vdc->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_y_vdc->setLayoutDirection(Qt::LeftToRight);
         textEdit_y_vdc->setAutoFillBackground(false);
@@ -958,7 +956,7 @@ public:
         sizePolicy1.setHeightForWidth(textEdit_y_phase->sizePolicy().hasHeightForWidth());
         textEdit_y_phase->setSizePolicy(sizePolicy1);
         textEdit_y_phase->setMaximumSize(QSize(55, 40));
-        textEdit_y_phase->setFont(font4);
+        textEdit_y_phase->setFont(font3);
         textEdit_y_phase->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
         textEdit_y_phase->setLayoutDirection(Qt::LeftToRight);
         textEdit_y_phase->setAutoFillBackground(false);
@@ -984,12 +982,12 @@ public:
         state = new QLabel(layoutWidget1);
         state->setObjectName(QStringLiteral("state"));
         state->setMaximumSize(QSize(16777215, 60));
-        QFont font5;
-        font5.setPointSize(30);
-        font5.setBold(true);
-        font5.setItalic(true);
-        font5.setWeight(75);
-        state->setFont(font5);
+        QFont font4;
+        font4.setPointSize(30);
+        font4.setBold(true);
+        font4.setItalic(true);
+        font4.setWeight(75);
+        state->setFont(font4);
         state->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
 
         verticalLayout->addWidget(state);
@@ -1038,11 +1036,11 @@ public:
         enable_x = new QCheckBox(layoutWidget2);
         enable_x->setObjectName(QStringLiteral("enable_x"));
         enable_x->setMinimumSize(QSize(0, 30));
-        QFont font6;
-        font6.setPointSize(12);
-        font6.setBold(true);
-        font6.setWeight(75);
-        enable_x->setFont(font6);
+        QFont font5;
+        font5.setPointSize(12);
+        font5.setBold(true);
+        font5.setWeight(75);
+        enable_x->setFont(font5);
         enable_x->setStyleSheet(QLatin1String("QCheckBox::indicator {\n"
 "     width: 30px;\n"
 "     height: 30px;\n"
@@ -1055,7 +1053,7 @@ public:
         enable_y = new QCheckBox(layoutWidget2);
         enable_y->setObjectName(QStringLiteral("enable_y"));
         enable_y->setMinimumSize(QSize(0, 30));
-        enable_y->setFont(font6);
+        enable_y->setFont(font5);
         enable_y->setStyleSheet(QLatin1String("QCheckBox::indicator {\n"
 "     width: 30px;\n"
 "     height: 30px;\n"
