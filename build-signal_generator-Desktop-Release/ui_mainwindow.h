@@ -266,6 +266,18 @@ public:
         slider_x_phase->setSizePolicy(sizePolicy3);
         slider_x_phase->setMinimumSize(QSize(0, 50));
         slider_x_phase->setMaximumSize(QSize(600, 50));
+        slider_x_phase->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_x_phase->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_x_phase->setMaximum(360);
         slider_x_phase->setSingleStep(1);
         slider_x_phase->setValue(0);
@@ -302,6 +314,18 @@ public:
         slider_x_vdc->setSizePolicy(sizePolicy3);
         slider_x_vdc->setMinimumSize(QSize(0, 50));
         slider_x_vdc->setMaximumSize(QSize(600, 50));
+        slider_x_vdc->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_x_vdc->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_x_vdc->setMaximum(160);
         slider_x_vdc->setValue(0);
         slider_x_vdc->setOrientation(Qt::Horizontal);
@@ -343,6 +367,18 @@ public:
         slider_x_vac->setSizePolicy(sizePolicy3);
         slider_x_vac->setMinimumSize(QSize(0, 50));
         slider_x_vac->setMaximumSize(QSize(600, 50));
+        slider_x_vac->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_x_vac->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_x_vac->setMinimum(1);
         slider_x_vac->setMaximum(80);
         slider_x_vac->setValue(1);
@@ -506,6 +542,18 @@ public:
         slider_x_freq->setSizePolicy(sizePolicy3);
         slider_x_freq->setMinimumSize(QSize(0, 50));
         slider_x_freq->setMaximumSize(QSize(600, 50));
+        slider_x_freq->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_x_freq->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_x_freq->setMinimum(1);
         slider_x_freq->setMaximum(100);
         slider_x_freq->setValue(1);
@@ -621,6 +669,18 @@ public:
         slider_y_phase->setSizePolicy(sizePolicy3);
         slider_y_phase->setMinimumSize(QSize(0, 50));
         slider_y_phase->setMaximumSize(QSize(600, 50));
+        slider_y_phase->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_y_phase->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_y_phase->setMaximum(360);
         slider_y_phase->setSingleStep(1);
         slider_y_phase->setValue(0);
@@ -654,6 +714,18 @@ public:
         slider_y_vdc->setSizePolicy(sizePolicy3);
         slider_y_vdc->setMinimumSize(QSize(0, 50));
         slider_y_vdc->setMaximumSize(QSize(600, 50));
+        slider_y_vdc->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_y_vdc->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_y_vdc->setMaximum(160);
         slider_y_vdc->setValue(0);
         slider_y_vdc->setOrientation(Qt::Horizontal);
@@ -686,6 +758,18 @@ public:
         slider_y_vac->setSizePolicy(sizePolicy3);
         slider_y_vac->setMinimumSize(QSize(0, 50));
         slider_y_vac->setMaximumSize(QSize(600, 50));
+        slider_y_vac->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_y_vac->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_y_vac->setMinimum(1);
         slider_y_vac->setMaximum(80);
         slider_y_vac->setValue(1);
@@ -790,6 +874,18 @@ public:
         slider_y_freq->setSizePolicy(sizePolicy3);
         slider_y_freq->setMinimumSize(QSize(0, 50));
         slider_y_freq->setMaximumSize(QSize(600, 50));
+        slider_y_freq->setCursor(QCursor(Qt::OpenHandCursor));
+        slider_y_freq->setStyleSheet(QLatin1String("QSlider::groove:horizontal {\n"
+"    background-color: lightGray;\n"
+"    height: 10px;\n"
+"    margin: 0px;\n"
+"    }\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    height: 30px;\n"
+"    width: 30px;\n"
+"    margin: -15px 0px;\n"
+"    }"));
         slider_y_freq->setMinimum(1);
         slider_y_freq->setMaximum(100);
         slider_y_freq->setValue(1);
