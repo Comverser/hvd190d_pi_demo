@@ -94,8 +94,9 @@ void MainWindow::on_Exit_clicked()
 {
     MainWindow::on_Stop_clicked();
 
-    demo_terminate(false);
-    QApplication::quit();
+    demo_terminate();
+    system("shutdown");
+    //QApplication::quit();
 }
 
 void MainWindow::on_enable_x_clicked(bool checked)
